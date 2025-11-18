@@ -1,6 +1,6 @@
 const express = require('express')
 const morgan = require('morgan')
-const  AuthHeaderCheck = require('./middlewares/appeal')
+const  AuthHeaderCheck = require( './middlewares/auth')
 const fs = require('node:fs');
 const path = require('node:path');
 // app initialization

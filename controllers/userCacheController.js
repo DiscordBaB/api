@@ -1,8 +1,8 @@
 const userCache = require( "../models/userCacheModel" );
 exports.getUser = async function (req, res) {
     let server_id, user_id;
-    server_id = req.body.server_id
-    user_id = req.body.user_id
+    server_id = req.server_id
+    user_id = req.user_id
     const { rows } = await userCache.findAll({
                 where: {
                     server_id: server_id,

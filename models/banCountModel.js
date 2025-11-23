@@ -1,4 +1,4 @@
-const { sqlize, SQLize, Model } = require('../databases/db')
+const { sqlize, SQLize, Model } = require( '../databases/db')
 class BanCount extends Model {}
 BanCount.init(
     {

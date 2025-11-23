@@ -1,4 +1,4 @@
-const { SQLize, sqlize, Model } = require('../databases/db')
+const { SQLize, sqlize, Model } = require( '../databases/db')
 class Appeal extends Model {}
 Appeal.init(
     {

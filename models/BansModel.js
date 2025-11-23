@@ -1,7 +1,10 @@
-const { SQLize, sqlize, Model } = require('../databases/db')
+import { SQLize, sqlize } from '../databases/db';
+import { Model } from 'sequelize';
+
 class Bans extends Model {
 
 }
+
 Bans.init(
     {
         id: {
@@ -25,7 +28,7 @@ Bans.init(
         },
         expiresAt: {
             type: SQLize.DATE,
-            allowNull: true // If null, ban is permanent
+            allowNull: true // If null, a ban is permanent
         }
     },
     {
@@ -35,9 +38,8 @@ Bans.init(
         modelName: 'ACL',
         timestamps: true
     }
-
 );
 (async () => {
     await ACL.sync()
 })();
-module.exports = ACL
+export default Bans

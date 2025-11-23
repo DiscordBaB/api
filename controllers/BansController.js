@@ -1,4 +1,4 @@
-const Bans = require( "../models/BansModel" );
+const Bans = require( "../models/BansModel" ).default;
 exports.getBansforUserByServer = async function (req, res) { // /:server_id/:user_id/
     let server_id, user_id;
     server_id = req.server_id
@@ -11,6 +11,20 @@ exports.getBansforUserByServer = async function (req, res) { // /:server_id/:use
             }
         }, (err, ban_result) => {
             if (err) return res.status(500).send({code: 1, message: 'SQL_ERROR'})
+        }
+    )
+}
+exports.getAllBansByServer = async function (req, res) {
+    let server_id;
+    server_id = req.server_id
+    const { rows } = await Bans.findAll(
+        {
+            where: {
+                serverID: server_id
+            }
+        }, (err, ban_result) => {
+            if (err) return res.status(500).send({code: 1, message: 'SQL_ERROR'});
+            res.status(200).json(rows)
         }
     )
 }
@@ -30,4 +44,9 @@ exports.getBanByIDWithServerID = async function (req, res) {
         }
     )
 }
-export
+exports.addBantoServer = async function (req, res) {
+    let server_id, user_id
+    server_id = req.server_id
+    user_id = req.user_id
+    const result = await Bans.create({})
+}

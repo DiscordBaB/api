@@ -14,7 +14,7 @@ exports.getUser = async function (req, res) {
     })
 }
 exports.addUsertoCache = async function (req, res) {
-    let user_id;
+    let user_id, creation_date, banner_url, avatarDecorationURL, avatarURL, username, bot, system, nicknames;
     user_id = req.body.user_id
 
     const result = await userCache.create({user_id: user_id}, (err, row) => {

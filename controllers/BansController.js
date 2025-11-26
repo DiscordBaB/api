@@ -45,8 +45,10 @@ exports.getBanByIDWithServerID = async function (req, res) {
     )
 }
 exports.addBantoServer = async function (req, res) {
-    let server_id, user_id
+    let server_id, user_id, reason, expires_date
     server_id = req.server_id
     user_id = req.user_id
-    const result = await Bans.create({})
+    reason = req.body.reason
+    expires_date = req.body.expires
+    const result = await Bans.create({userID: user_id, serverID: server_id, reason: req.body.reason, expiresAt: expires_date})
 }

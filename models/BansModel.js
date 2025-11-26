@@ -34,12 +34,12 @@ Bans.init(
     {
         sqlize,
         freezeTableName: true,
-        tableName: 'ACL',
-        modelName: 'ACL',
+        tableName: 'Bans',
+        modelName: 'Bans',
         timestamps: true
     }
 );
 (async () => {
-    await ACL.sync()
+    await Bans.sync()
 })();
 export default Bans

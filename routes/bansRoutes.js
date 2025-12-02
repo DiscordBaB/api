@@ -4,7 +4,7 @@ const banController = require('../controllers/BansController');
 const { body, validationResult, param, query } = require('express-validator');
 
 
-router.get('/bans/:server_id', [banController.getAllBansByServer]);
-router.get('/bans/:server_id/:user_id')
-router.post('/bans/:server_id', banController.addBantoServer)
+router.get('/:server_id', [banController.getAllBansByServer]);
+router.get('/:server_id/:user_id')
+router.post('/:server_id', banController.addBantoServer)
 module.exports = router;

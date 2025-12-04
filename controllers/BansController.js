@@ -1,5 +1,5 @@
-const Bans = require( "../models/BansModel" ).default;
-exports.getBansforUserByServer = async function (req, res) { // /:server_id/:user_id/
+import Bans from "../models/BansModel.js";
+export async function getBansforUserByServer (req, res) { // /:server_id/:user_id/
     let server_id, user_id;
     server_id = req.server_id
     user_id = req.user_id
@@ -14,7 +14,7 @@ exports.getBansforUserByServer = async function (req, res) { // /:server_id/:use
         }
     )
 }
-exports.getAllBansByServer = async function (req, res) {
+export async function getAllBansByServer (req, res) {
     let server_id;
     server_id = req.server_id
     const { rows } = await Bans.findAll(
@@ -28,7 +28,7 @@ exports.getAllBansByServer = async function (req, res) {
         }
     )
 }
-exports.getBanByIDWithServerID = async function (req, res) {
+export async function getBanByIDWithServerID (req, res) {
     let server_id, user_id
     server_id = req.server_id
     user_id = req.user_id
@@ -44,7 +44,7 @@ exports.getBanByIDWithServerID = async function (req, res) {
         }
     )
 }
-exports.addBantoServer = async function (req, res) {
+export async function addBantoServer (req, res) {
     let server_id, user_id, reason, expires_date
     server_id = req.server_id
     user_id = req.user_id

@@ -1,5 +1,5 @@
 const express = require('express')
-const morgan = require('morgan')
+const logger = require('./middlewares/morgan')
 const  AuthHeaderCheck = require( './middlewares/auth')
 const fs = require('node:fs');
 const path = require('node:path');
@@ -8,7 +8,7 @@ const app = express();
 // use only JSON
 app.use(express.json());
 // middlewares
-app.use(morgan) // logging first
+app.use(logger())
 app.use(AuthHeaderCheck)
 
 let AppealsRouter = require('./routes/appealsRoutes')

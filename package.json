@@ -2,7 +2,7 @@
   "description": "developer ban appeal bot",
   "license": "ISC",
   "author": "IotaSpencer",
-  "type": "commonjs",
+  "type": "module",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,12 +12,14 @@
   "dependencies": {
     "@sequelize/mysql": "^7.0.0-alpha.46",
     "express": "^5.1.0",
+    "express-validator": "^7.3.1",
     "morgan": "^1.10.1",
     "sequelize": "^6.37.7",
     "sqlite3": "^5.1.7"
   },
   "devDependencies": {
     "@eslint/js": "^9.34.0",
+    "@types/morgan": "^1.9.10",
     "eslint": "^9.34.0",
     "flow-bin": "^0.280.0"
   }

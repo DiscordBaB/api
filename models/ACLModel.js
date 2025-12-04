@@ -1,7 +1,7 @@
-const { SQLize, sqlize, Model } = require( '../databases/db')
-class ACL extends Model {
-
-}
+import {SQLize} from '../databases/db.js';
+import {sqlize} from '../databases/db.js';
+import { Model } from 'sequelize';
+class ACL extends Model {}
 ACL.init(
     {
         id: {
@@ -42,4 +42,4 @@ ACL.init(
 (async () => {
     await ACL.sync()
 })();
-module.exports = ACL
+export default ACL

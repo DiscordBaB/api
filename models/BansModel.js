@@ -1,4 +1,4 @@
-import { SQLize, sqlize } from '../databases/db';
+import { SQLize, sqlize } from '../databases/db.js';
 import { Model } from 'sequelize';
 
 class Bans extends Model {

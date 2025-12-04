@@ -1,4 +1,6 @@
-const { SQLize, sqlize, Model } = require( '../databases/db')
+import {sqlize} from '../databases/db.js';
+import {SQLize} from '../databases/db.js';
+import { Model } from 'sequelize';
 class Appeal extends Model {}
 Appeal.init(
     {
@@ -42,4 +44,4 @@ Appeal.init(
 (async () => {
     await Appeal.sync()
 })();
-module.exports = Appeal
+export default Appeal

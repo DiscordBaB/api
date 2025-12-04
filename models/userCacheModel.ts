@@ -1,4 +1,4 @@
-import { sqlize } from '../databases/db';
+import {sqlize} from '../databases/db.js';
 import { Model, DataTypes } from 'sequelize';
 
 // Define attribute types for TypeScript

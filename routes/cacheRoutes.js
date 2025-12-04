@@ -1,12 +1,12 @@
-const express = require('express');
-const router = express.Router();
-const cacheController = require('../controllers/userCacheController');
-const { body, validationResult, param, query } = require('express-validator');
+import { Router } from 'express';
+const router = Router();
+import { getUser, addUsertoCache } from '../controllers/userCacheController.js';
+import { body, validationResult, param, query } from 'express-validator';
 
 router.get('/', []); // Get all users from Cache (not a good idea)
 router.get('/:id', [
     param('id').notEmpty,
-    cacheController.getUser
+    getUser
 ]) // Return a user from the cache DB (use discord ID)
 router.post('/', [
     body('user_id').isString().notEmpty().withMessage('user_id is required and must be a string'),
@@ -18,6 +18,6 @@ router.post('/', [
     body('bot').isBoolean().withMessage('bot must be a boolean'),
     body('system').isBoolean().withMessage('system must be a boolean'),
     body('nicknames').isJSON().withMessage('nicknames must be a valid JSON object'),
-    cacheController.addUsertoCache
+    addUsertoCache
 ])
-module.exports = router;
+export default router;

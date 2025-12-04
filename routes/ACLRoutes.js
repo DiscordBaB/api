@@ -1,8 +1,8 @@
-const express = require('express');
-const router = express.Router();
-const ACLController = require('../controllers/ACLController');
-const { body, validationResult, param, query } = require('express-validator');
+import { Router } from 'express';
+const router = Router();
+import * as ACLController from '../controllers/ACLController.js';
+import { body, validationResult, param, query } from 'express-validator';
 
 router.get('/', ACLController.getAllACLs);
 router.get('/:id')
-module.exports = router;
+export default router;

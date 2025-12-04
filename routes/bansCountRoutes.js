@@ -1,8 +1,8 @@
-const express = require('express');
-const router = express.Router();
-const banCountController = require('../controllers/banCountController');
-const { body, validationResult, param, query } = require('express-validator');
+import { Router } from 'express';
+const router = Router();
+import banCountController from '../controllers/banCountController.js';
+import { body, validationResult, param, query } from 'express-validator';
 
 router.get('/', banCountController);
-router.get('/:server_id/:user_id/')
-module.exports = router;
+router.get('/:server_id/:user_id/', banCountController.getCountForUser);
+export default router;

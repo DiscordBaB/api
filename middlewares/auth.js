@@ -1,4 +1,4 @@
-const { ACL } = require('../models/ACLModel')
+import ACL from '../models/ACLModel.js';
 const AuthHeaderCheck = async function (req, res, next) {
     const token = req.headers['Authorization'];
     if (!token) return res.status(403).send({code: 1, message: 'INVALID_TOKEN'});
@@ -22,4 +22,4 @@ const AuthHeaderCheck = async function (req, res, next) {
     }
 }
 
-module.exports = AuthHeaderCheck
+export default AuthHeaderCheck

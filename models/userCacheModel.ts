@@ -1,4 +1,4 @@
-import {sqlize} from '../databases/db.js';
+import {sequelize} from '../databases/db.js';
 import { Model, DataTypes } from 'sequelize';
 
 // Define attribute types for TypeScript
@@ -35,6 +35,7 @@ UserCache.init(
     id: {
       type: DataTypes.STRING,
       unique: true,
+      primaryKey: true,
       allowNull: false
     },
     createdAt: {
@@ -71,7 +72,7 @@ UserCache.init(
     }
   },
   {
-    sequelize: sqlize,
+    sequelize,
     freezeTableName: true,
     tableName: 'user_cache',
     modelName: 'UserCache',

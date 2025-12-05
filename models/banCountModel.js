@@ -1,5 +1,5 @@
 import {SQLize} from '../databases/db.js';
-import {sqlize} from '../databases/db.js';
+import {sequelize} from '../databases/db.js';
 import { Model } from 'sequelize';
 class BanCount extends Model {}
 BanCount.init(
@@ -27,7 +27,7 @@ BanCount.init(
         },
     },
     {
-        sqlize,
+        sequelize,
         freezeTableName: true,
         tableName: 'bancounts',
         modelName: 'BanCount',

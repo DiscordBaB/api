@@ -1,9 +1,9 @@
 import { Router } from 'express';
 const router = Router();
-import { getUser, addUsertoCache } from '../controllers/userCacheController.js';
+import { getUser, addUsertoCache, getAllUsers } from '../controllers/userCacheController.js';
 import { body, validationResult, param, query } from 'express-validator';
 
-router.get('/', []); // Get all users from Cache (not a good idea)
+router.get('/', [getAllUsers]); // Get all users from Cache (not a good idea)
 router.get('/:id', [
     param('id').notEmpty,
     getUser

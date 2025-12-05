@@ -1,4 +1,4 @@
-import {sqlize} from '../databases/db.js';
+import {sequelize} from '../databases/db.js';
 import {SQLize} from '../databases/db.js';
 import { Model } from 'sequelize';
 class Appeal extends Model {}
@@ -33,7 +33,7 @@ Appeal.init(
         }
     },
     {
-        sqlize,
+        sequelize,
         freezeTableName: true,
         tableName: 'appeals',
         modelName: 'Appeal',

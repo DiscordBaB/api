@@ -1,13 +1,12 @@
 import SQLize from 'sequelize';
-import mysql_config from '/home/ken/.dbab-config/dbab.json' with {type: 'json'};
-
-let sqlize;
+import cfg from '/home/ken/.dbab-config/dbab.json' with {type: 'json'};
+let sequelize;
 // @ts-ignore
-sqlize = new SQLize(mysql_config.database, mysql_config.user, mysql_config.password,{
+sequelize = new SQLize(cfg.mysql.database, cfg.mysql.user, cfg.mysql.password,{
     dialect: 'mysql',
     logging: console.log,
-    host: mysql_config.host,
-    port: mysql_config.port
+    host: cfg.mysql.host,
+    port: cfg.mysql.port
 });
-export { sqlize }
+export { sequelize }
 export { SQLize}

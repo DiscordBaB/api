@@ -1,4 +1,10 @@
 import UserCache from "../models/userCacheModel.ts";
+export async function getAllUsers (req, res) {
+    const { rows } = await UserCache.findAll( (err, _) => {
+        if (err) return res.status(500).send({code: 1, message: 'SQL_ERROR'});
+        res.status(200).json(rows)
+    })
+}
 export async function getUser (req, res) {
     let server_id, user_id;
     server_id = req.server_id

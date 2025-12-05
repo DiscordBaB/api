@@ -9,5 +9,10 @@ export async function getCountForUser (req, res) {
         res.status(200).json(rows)
     })
 }
+export async function getAllCounts (req, res) {
+    const { rows } = await banCountModel.findAll({})
+    res.status(200).json(rows)
+}
+banCountController.getAllCounts = getAllCounts;
 banCountController.getCountForUser = getCountForUser;
 export default banCountController;

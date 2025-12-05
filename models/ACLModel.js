@@ -1,5 +1,5 @@
 import {SQLize} from '../databases/db.js';
-import {sqlize} from '../databases/db.js';
+import {sequelize} from '../databases/db.js';
 import { Model } from 'sequelize';
 class ACL extends Model {}
 ACL.init(
@@ -31,7 +31,7 @@ ACL.init(
         }
     },
     {
-        sqlize,
+        sequelize,
         freezeTableName: true,
         tableName: 'ACL',
         modelName: 'ACL',

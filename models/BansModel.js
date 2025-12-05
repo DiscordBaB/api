@@ -1,4 +1,5 @@
-import { SQLize, sqlize } from '../databases/db.js';
+import { SQLize } from '../databases/db.js'
+import { sequelize } from '../databases/db.js';
 import { Model } from 'sequelize';
 
 class Bans extends Model {
@@ -32,7 +33,7 @@ Bans.init(
         }
     },
     {
-        sqlize,
+        sequelize,
         freezeTableName: true,
         tableName: 'Bans',
         modelName: 'Bans',

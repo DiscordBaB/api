@@ -1,7 +1,7 @@
 import morgan from 'morgan';
 import { createWriteStream } from 'fs';
 import { join } from 'path';
-
+const __dirname =  import.meta.dirname;
 const accessLogStream = createWriteStream(
   join(__dirname, '../access.log'), // Adjust the path as needed
   { flags: 'a' }

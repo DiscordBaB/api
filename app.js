@@ -1,5 +1,5 @@
 import express, { json } from 'express';
-import logger from './middlewares/morgan.cjs';
+import logger from './middlewares/morgan.js';
 import AuthHeaderCheck from './middlewares/auth.js';
 import fs from 'node:fs';
 import path from 'node:path';

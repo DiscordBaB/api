@@ -1,34 +1,34 @@
 import {sequelize} from '../databases/db.js';
-import {SQLize} from '../databases/db.js';
+import {Sequelize} from '../databases/db.js';
 import { Model } from 'sequelize';
 class Appeal extends Model {}
 Appeal.init(
     {
         id: {
-            type: SQLize.INTEGER,
+            type: Sequelize.INTEGER,
             unique: true,
             allowNull: false,
             primaryKey: true
         },
         userID: {
-            type: SQLize.STRING,
+            type: Sequelize.STRING,
             unique: true,
             allowNull: false
         },
         reason: {
-            type: SQLize.TEXT,
+            type: Sequelize.TEXT,
             allowNull: false,
         },
         disclaimer: {
-            type: SQLize.INTEGER,
+            type: Sequelize.INTEGER,
             allowNull: false,
         },
         createdAt: {
-            type: SQLize.DATE,
+            type: Sequelize.DATE,
             allowNull: false,
         },
         serverID: {
-            type: SQLize.STRING,
+            type: Sequelize.STRING,
             allowNull: false
         }
     },

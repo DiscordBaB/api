@@ -1,26 +1,26 @@
-import {SQLize} from '../databases/db.js';
+import {Sequelize} from '../databases/db.js';
 import {sequelize} from '../databases/db.js';
 import { Model } from 'sequelize';
 class ACL extends Model {}
 ACL.init(
     {
         id: {
-            type: SQLize.INTEGER,
+            type: Sequelize.INTEGER,
             unique: true,
             allowNull: false,
             primaryKey: true
         },
         key: {
-            type: SQLize.STRING,
+            type: Sequelize.STRING,
             unique: true,
             allowNull: false,
         },
         createdAt: {
-            type: SQLize.DATE,
+            type: Sequelize.DATE,
             allowNull: false,
         },
         permissions: {
-            type: SQLize.JSON,
+            type: Sequelize.JSON,
             allowNull: false,
             /*
             * {

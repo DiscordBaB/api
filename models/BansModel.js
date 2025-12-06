@@ -1,4 +1,4 @@
-import { SQLize } from '../databases/db.js'
+import { Sequelize } from '../databases/db.js'
 import { sequelize } from '../databases/db.js';
 import { Model } from 'sequelize';
 
@@ -9,26 +9,26 @@ class Bans extends Model {
 Bans.init(
     {
         id: {
-            type: SQLize.INTEGER,
+            type: Sequelize.INTEGER,
             unique: true,
             allowNull: false,
             primaryKey: true
         },
         userID: {
-            type: SQLize.STRING,
+            type: Sequelize.STRING,
             unique: true,
             allowNull: false
         },
         serverID: {
-            type: SQLize.STRING,
+            type: Sequelize.STRING,
             allowNull: false,
         },
         createdAt: {
-            type: SQLize.DATE,
+            type: Sequelize.DATE,
             allowNull: false,
         },
         expiresAt: {
-            type: SQLize.DATE,
+            type: Sequelize.DATE,
             allowNull: true // If null, a ban is permanent
         }
     },

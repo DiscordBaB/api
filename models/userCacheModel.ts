@@ -1,4 +1,5 @@
 import {sequelize} from '../databases/db.js';
+import {Sequelize} from 'sequelize'
 import { Model, DataTypes } from 'sequelize';
 
 // Define attribute types for TypeScript

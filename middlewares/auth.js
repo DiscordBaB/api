@@ -13,12 +13,13 @@ const AuthHeaderCheck = async function (req, res, next) {
       )
         .then(t => {
           needed_token = t
+          if (token === needed_token) { next(); }
+
         })
         .catch(err => {
-          // Key not found
-        });
-        if (token === needed_token) { next(); }
-        else return res.status(403).send({code: 2, message: 'INVALID_TOKEN'})
+          if (err) { return res.status(403).send({code: 2, message: 'INVALID_TOKEN'}) // Key not found}
+          }
+        );
     }
 }
 

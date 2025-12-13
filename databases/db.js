@@ -1,5 +1,8 @@
 import Sequelize from 'sequelize';
-import cfg from '/home/ken/.dbab-config/dbab.json' with {type: 'json'};
+import os from 'os'
+home_dir = os.homedir();
+import cfg from `${home_dir}/.dbab-config/dbab.json` with {type: 'json'};
+
 // @ts-ignore
 const sequelize = new Sequelize(cfg.mysql.database, cfg.mysql.user, cfg.mysql.password,{
     dialect: 'mysql',

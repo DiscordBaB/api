@@ -1,2 +1,3 @@
-const cfg_path = "/home/ken/.dbab-config/dbab.json"
-const CFG = require(cfg_path)
+const os = require('os')
+home_dir = os.homedir();
+const CFG = require(`${home_dir}/.dbab-config/dbab.json`);

@@ -22,10 +22,41 @@ ACL.init(
         permissions: {
             type: Sequelize.JSON,
             allowNull: false,
-            /*
-            * {
-            *   api: [true, {}],
-            *   dashboard: true,
+            /**
+            *   {
+            *     "api":{
+            *       "global":true,
+            *         "paths":{
+            *           "acl":{
+            *             "perms":{
+            *               "can_add":true
+            *             }
+            *           },
+            *           "appeals":{
+            *             "perms":{
+            *               "can_add":true
+            *             }
+            *           },
+            *           "bans":{
+            *            "perms":{
+            *              "can_add_3rd_party":true
+            *            }
+            *          },
+            *          "bc":{
+            *            "perms":{
+            *              "can_add":true
+            *            }
+            *          },
+            *          "cache":{
+            *            "perms":{
+            *              "can_add_standalone":true
+            *            }
+            *          }
+            *        }
+            *      },
+            *      "dashboard":true
+            *    }
+            *
             *
             */
         }

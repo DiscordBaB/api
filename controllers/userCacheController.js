@@ -19,10 +19,24 @@ export function getUser (req, res) {
 
 export function addUsertoCache (req, res) {
     const user_id = req.user_id;
+    const createdAt = req.body.createdAt;
     const is_bot = req.body.bot;
-    const nickname = req.body.nickname;
+    const username = req.body.username;
+    const is_system = req.body.system;
+    const avatar_url = req.body.avatar_url;
+    const banner_url = req.body.banner_url;
+    const avatar_decoration_url = req.body.avatar_decoration_url;
 
-    UserCache.create({ user_id, nickname, is_bot })
+    UserCache.create({
+        id: user_id,
+        username: username,
+        bot: is_bot,
+        system: is_system,
+        avatar_url: avatar_url,
+        banner_url: banner_url,
+        avatar_decoration_url: avatar_decoration_url,
+        createdAt: createdAt
+        })
     .then(row => res.status(200).json(row))
     .catch(err => res.status(500).send({code: 1, message: 'SQL_ERROR'}));
 }

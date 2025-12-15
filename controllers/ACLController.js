@@ -32,5 +32,6 @@ export function getACLByUserID (req, res) {
 }
 
 export function verifyAPIKey (req, res) {
+    // Middleware does this instead
     res.status(501).send({ code: 1, message: 'NOT_IMPLEMENTED' });
 }

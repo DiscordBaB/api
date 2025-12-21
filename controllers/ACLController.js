@@ -35,3 +35,13 @@ export function verifyAPIKey (req, res) {
     // Middleware does this instead
     res.status(501).send({ code: 1, message: 'NOT_IMPLEMENTED' });
 }
+
+export function updatePerms (req, res) {
+    ACL.update(
+        { perms: req.body.perms },
+        { where: { id: req.acl_id } }
+    )
+    .then(() => res.status(200).json({ message: 'PERMS_UPDATED', perms: req.body.perms }))
+    .catch(err => res.status(500).send({code: 1, message: 'SQL_ERROR'})
+    )
+}

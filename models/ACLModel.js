@@ -19,6 +19,10 @@ ACL.init(
             type: Sequelize.DATE,
             allowNull: false,
         },
+        updatedAt: {
+            type: Sequelize.DATE,
+            allowNNull: false
+        },
         permissions: {
             type: Sequelize.JSON,
             allowNull: false,
